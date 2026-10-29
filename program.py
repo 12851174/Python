@@ -1,23 +1,35 @@
 chore_list = []
 choice = 0
 
-while choice != 3:
+while True:
     try: 
-        choice = int(input("Make a choice \n1. Add a Chore\n2. Check Off Chore\n3. Quit\n"))
+        choice = int(input("\n1. Add a Chore\n2. Check Off Chore\n3. Display List\n4. Quit\nMake a Choice (1, 2, 3, 4): "))
     
     except ValueError:
-        print("Invalid Input!")
+        print("Invalid Input")
         continue
+
         
-        
-         
     if choice == 1:
-        print("You chose 1")
+        chore = input("Enter a chore to add to the list: ")
+        chore_list.append(chore)
+    
     elif choice == 2:
-        print("You chose 2")
+        
+    
+    elif choice == 3:
+        display = "\nList:\n"
+        for i,chore in enumerate(chore_list):
+            display += f"{i + 1}: {chore}\n"
+        print(display)
+        input("Press enter to continue")
+
+    elif choice == 4:
+        break
+
     else:
         print("Invalid Input")
         continue
         
         
-print("Done!")
+print("\nProgram Finished")
