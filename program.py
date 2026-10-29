@@ -15,7 +15,17 @@ while True:
         chore_list.append(chore)
     
     elif choice == 2:
-        
+        try:
+            index = int(input("\nEnter an index from the list you'd like to delete: "))
+        except ValueError:
+            print("Invalid Input")
+            continue
+
+        if index <= len(chore_list) or index < 1:
+            chore_list = chore_list[:index - 1] + chore_list[index:]
+        else:
+            print("Invalid Index\n")
+            
     
     elif choice == 3:
         display = "\nList:\n"
